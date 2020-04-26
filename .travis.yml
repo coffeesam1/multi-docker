@@ -16,7 +16,7 @@ after_success:
     #login to docker cli
     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
     #now push to docker hub
-    -docker push coffeesam/multi-client
-    -docker push coffeesam/multi-nginx
-    -docker push coffeesam/multi-server
-    -docker push coffeesam/multi-worker
+    - docker push coffeesam/multi-client
+    - docker push coffeesam/multi-nginx
+    - docker push coffeesam/multi-server
+    - docker push coffeesam/multi-worker
