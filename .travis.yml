@@ -3,20 +3,20 @@ services:
     - docker
 
 before_install:
-    - docker build -t coffeesam/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t coffeesam1/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run coffeesam/react-test npm test -- --coverage
+    - docker run coffeesam1/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t coffeesam/multi-client ./client
-    - docker build -t coffeesam/multi-nginx ./nginx
-    - docker build -t coffeesam/multi-server ./server
-    - docker build -t coffeesam/multi-worker ./worker
+    - docker build -t coffeesam1/multi-client ./client
+    - docker build -t coffeesam1/multi-nginx ./nginx
+    - docker build -t coffeesam1/multi-server ./server
+    - docker build -t coffeesam1/multi-worker ./worker
 
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-    - docker push coffeesam/multi-client
-    - docker push coffeesam/multi-nginx
-    - docker push coffeesam/multi-server
-    - docker push coffeesam/multi-worker
+    - docker push coffeesam1/multi-client
+    - docker push coffeesam1/multi-nginx
+    - docker push coffeesam1/multi-server
+    - docker push coffeesam1/multi-worker
