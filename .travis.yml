@@ -13,9 +13,9 @@ after_success:
     - docker build -t coffeesam/multi-nginx ./nginx
     - docker build -t coffeesam/multi-server ./server
     - docker build -t coffeesam/multi-worker ./worker
-    #login to docker cli
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
-    #now push to docker hub
+
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
     - docker push coffeesam/multi-client
     - docker push coffeesam/multi-nginx
     - docker push coffeesam/multi-server
