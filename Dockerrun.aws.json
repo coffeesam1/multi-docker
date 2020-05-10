@@ -22,6 +22,7 @@
         {
             "name": "ngnix",
             "image": "coffeesam1/multi-nginx",
+            "hostname": "nginx",
             "essential": true,
             "portMappings":[{
                 "hostPort" : 80,
