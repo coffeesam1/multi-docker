@@ -5,24 +5,19 @@
             "name": "client",
             "image": "coffeesam1/multi-client",
             "hostname": "client",
-            "essential": false,
-            "memory": 128
+            "essential": false
         },
         {
             "name": "server",
             "image": "coffeesam1/multi-server",
             "hostname": "api",
-            "essential": false,
-            "memory": 128
-
+            "essential": false
         },
         {
             "name": "worker",
             "image": "coffeesam1/multi-worker",
             "hostname": "worker",
-            "essential": false,
-            "memory": 128
-
+            "essential": false
         },
         {
             "name": "ngnix",
@@ -32,9 +27,7 @@
                 "hostPort" : 80,
                 "containerPort" : 80
             }],
-            "links": ["client", "server"],
-            "memory": 128
-
+            "links": ["client", "server"]
         }
     ]
 }
